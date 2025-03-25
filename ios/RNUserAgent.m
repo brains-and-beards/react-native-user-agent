@@ -151,23 +151,13 @@ RCT_EXPORT_MODULE(RNUserAgent);
                               };
     }
 
-     NSString* deviceName = [deviceNames valueForKey:deviceId];
+    NSString* deviceName = [deviceNames valueForKey:deviceId];
 
-     if (deviceName) {
-         return deviceName;
-     }
-
-    if([deviceId hasPrefix:@"iPad"]) {
-        return @"iPad";
-    }
-    else if([deviceId hasPrefix:@"iPhone"]){
-        return @"iPhone";
-    }
-    else if([deviceId hasPrefix:@"AppleTV"]){
-        return @"AppleTV";
+    if (deviceName) {
+        return deviceName;
     }
 
-    return @"unknown";
+    return deviceId;
 }
 
 
